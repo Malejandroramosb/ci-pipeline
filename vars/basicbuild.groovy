@@ -18,6 +18,7 @@ def call() {
             IMAGE_NAME = sh(
                     script: "cat DockerImageName",
                     returnStdout: true
+            )
         }
 
         stages {
