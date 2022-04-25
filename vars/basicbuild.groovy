@@ -26,7 +26,7 @@ def call() {
            stage('Create Docker image'){
                steps {
                   script {
-                    sh 'docker build -t $IMAGE_NAME:$GIT_COMMIT_SHORT'
+                    sh 'docker build -t $IMAGE_NAME:$GIT_COMMIT_SHORT .'
                   }
                }
            }
