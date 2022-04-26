@@ -30,7 +30,7 @@ def call() {
            stage('Create Stack'){
                steps {
                   script {
-                    sh 'aws cloudformation deploy --template-file ecs.yaml --stack My-New-ECS'
+                    sh 'aws cloudformation deploy --template-file ecs.yaml --stack My-New-ECS --region us-east-1'
                   }
                }
            }
