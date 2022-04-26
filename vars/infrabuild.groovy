@@ -14,11 +14,7 @@ def call() {
                     script: "printf \$(git rev-parse --short ${GIT_COMMIT})",
                     returnStdout: true
             )
-
-            IMAGE_NAME = sh(
-                    script: "cat DockerImageName",
-                    returnStdout: true
-            )
+        
         }
 
         stages {
