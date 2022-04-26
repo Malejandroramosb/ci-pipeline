@@ -33,7 +33,7 @@ def call() {
            stage('Push to Docker registry'){
                steps {
                   script {
-                    sh 'docker push -t $IMAGE_NAME:$GIT_COMMIT_SHORT .'
+                    sh 'docker push $IMAGE_NAME:$GIT_COMMIT_SHORT'
                   }
                }
            }

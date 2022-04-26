@@ -23,17 +23,17 @@ def call() {
 
         stages {
 
-           stage('Create Docker image'){
+           stage('Run CF linter'){
                steps {
                   script {
-                    sh 'docker build -t $IMAGE_NAME:$GIT_COMMIT_SHORT .'
+                    sh 'cfn-lint .'
                   }
                }
            }
-           stage('Push to Docker registry'){
+           stage('Create Stack'){
                steps {
                   script {
-                    sh 'docker push -t $IMAGE_NAME:$GIT_COMMIT_SHORT .'
+                    sh 'aws cloudformation deploy --template-file ecs.yaml --stack My-New-ECS'
                   }
                }
            }
