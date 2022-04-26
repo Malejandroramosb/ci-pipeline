@@ -33,7 +33,8 @@ def call() {
            stage('Push to Docker registry'){
                steps {
                   script {
-                    sh 'docker push $IMAGE_NAME:$GIT_COMMIT_SHORT'
+                    sh '''aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 040877022702.dkr.ecr.us-east-1.amazonaws.com
+                    docker push $IMAGE_NAME:$GIT_COMMIT_SHORT'''
                   }
                }
            }
