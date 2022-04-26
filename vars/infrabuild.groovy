@@ -22,7 +22,7 @@ def call() {
            stage('Run CF linter'){
                steps {
                   script {
-                    sh '/home/ec2-user/.local/bin/cfn-lint ecs.yaml'
+                    sh 'sudo /home/ec2-user/.local/bin/cfn-lint ecs.yaml'
                   }
                }
            }
