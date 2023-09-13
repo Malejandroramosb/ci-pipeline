@@ -10,7 +10,7 @@ pipeline {
         stage('List files'){
             steps {
                 sh 'ls'
-                sh 'pwd
+                sh 'pwd'
             }
         }
 
