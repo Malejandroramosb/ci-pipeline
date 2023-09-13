@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('Create docker'){
             steps {
-                sh 'docker build . -t ${env.random_num}'
+                sh "docker build . -t ${env.random_num}"
                 
             }
         }
